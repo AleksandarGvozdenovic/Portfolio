@@ -1,0 +1,58 @@
+/*======================= MEDIA QUERIES ===================*/
+
+@media screen and (max-width:600px) {
+  body{
+    font-size:1rem;
+  }  
+
+  .container{
+    width: var(--container-w-sm);
+  }
+
+  section > h1, section > p{
+    width: var(--container-w-sm);
+  }
+
+  nav{
+    height: 4rem;
+  }
+
+  .header__container{
+    width: 90%;
+  }
+
+  .header__container p{
+    margin-top: 0.4rem;
+  }
+
+  .header__socials{
+    display: none;
+  }
+
+  .resume__container{
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .resume__left menu{
+    gap: 0.7rem;
+  }
+
+  .resume__right.skills ul{
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.2rem;
+  }
+
+  .project__categories{
+    margin-top: 2.3rem;
+  }
+  
+  .projects__container{
+    gap: 1.5rem;
+  }
+
+  form button {
+    width: 100%;
+  }
+
+}

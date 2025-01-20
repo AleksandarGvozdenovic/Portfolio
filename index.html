@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <!------- ICONS  ----->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+  <!------- GOOGLE FONTS  ----->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <!------- ANIMATE ON SCROLL  ----->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-------  CSS ----->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="queries.css">
+  
+</head>
+<body>
+<!--===============================>NAVBAR<============================-->
+  <nav>
+     <div class="container nav__container">
+        <a href="index.html">Aleksandar Gvozdenović</a>
+        <button class="nav__theme-btn">
+          <i class="uil uil-moon"></i>
+        </button>
+     </div>
+  </nav>
+  
+
+<!--===============================>FLOATING NAV<============================-->
+  <menu class="floating__nav">
+     <a href="#" class="active"><i class="uil uil-estate"></i></a>
+     <a href="#resume"><i class="uil uil-user"></i></a>
+     <a href="#projects"><i class="uil uil-images"></i></a>
+     <a href="#contact"><i class="uil uil-phone"></i></a>
+  </menu>
+
+<!--===============================>HEADER<============================-->  
+  <header>
+    <div class="header__container">
+      <div class="header__image" data-aos="fade-up" data-aos-delay="800">
+        <img src="./assets/4.jpg" alt="Aleksandar's Image">
+      </div>
+      <h5 data-aos="fade-in">Hello, I'm Aleksandar!</h5>
+      <h1 data-aos="fade-in">Aspiring <span>Software Developer</span></h1>
+      <p data-aos="fade-in">
+        I am passionate about programming and solving real-world challenges. Eager to grow, I strive to develop innovative solutions and deepen my knowledge in software development.
+      </p>
+      <div class="header__cta" data-aos="fade-up">
+        <a href="#projects" class="btn">My Projects</a>
+        <a href="#contact" class="btn primary">Contact Me</a>
+      </div>
+      <menu class="header__socials">
+        <a href="https://www.linkedin.com/in/aleksandar-gvozdenovic-78bb07222/" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+        <a href="https://github.com/AleksandarGvozdenovic" target="_blank"><i class="uil uil-github-alt"></i></a>
+      </menu>
+
+    </div>
+  </header>
+<!--===============================>RESUME<============================-->  
+  <section id="resume">
+     <div class="container resume__container" data-aos="fade-in" data-aos-delay="200">
+        <div class="resume__left">
+          <h1>Why hire me?</h1>
+
+          <menu>
+            <button class="btn primary experience__btn">Experience</button>
+            <button class="btn education__btn">Education</button>
+            <button class="btn skills__btn">Skills</button>
+            <button class="btn about__btn">About me</button>
+          </menu>
+        </div>
+        <div class="resume__right">
+          <!-- Content loaded dynamically through JS -->
+        </div>
+     </div>
+  </section>
+
+<!--===============================>PROJECTS<============================--> 
+<section class="projects" id="projects">
+  <h1>Recent Projects</h1>
+  <p>
+    Here are some of the projects I've worked on while developing my skills in web development.
+  </p>
+  <menu class="projects__categories">
+    <button class="btn primary" data-filter="*">All</button>
+    <button class="btn" data-filter=".frontend">Frontend</button>
+    <button class="btn" data-filter=".backend">Backend</button>
+    <button class="btn" data-filter=".fullstack">Fullstack</button>
+  </menu>
+  <div class="container projects__container" data-aos="fade-in" data-aos-delay="200">
+    <article class="project frontend" data-order="1">
+      <div class="project__image">
+        <img src="./assets/project1.jpg" alt="GG Almont Website">
+      </div>
+      <h5>GG Almont Website </h5>
+      <p>
+       Developed a responsive website for GG Almont, featuring clean design, intuitive navigation, and full accessibility. It allows users to easily access information, providing a smooth experience across devices. 
+      </p>
+      <div class="project__cta">
+        <a href="https://www.gg-almont.me/" class="btn primary" target="_blank"><i class="uil uil-link"></i></a>
+        <a href="https://github.com/AleksandarGvozdenovic/GG-Almont" class="btn" target="_blank"><i class="uil uil-github-alt"></i></a>
+      </div>
+    </article>
+    <article class="project backend" data-order="2">
+      <div class="project__image">
+        <img src="./assets/project2.jpg" alt="Time Tracker App">
+      </div>
+      <h5>Time Tracker</h5>
+      <p>
+       Built a time tracker app that lets users create and manage tasks, start/stop timers, and reset as needed. Users can edit and delete tasks, tracking time effectively. All data is stored through tasks for easy management.
+      </p>
+      <div class="project__cta">
+        <a href="https://github.com/AleksandarGvozdenovic/Time-Tracker" class="btn" target="_blank"><i class="uil uil-github-alt"></i></a>
+      </div>
+    </article>
+    <article class="project fullstack" data-order="3">
+      <div class="project__image">
+        <img src="./assets/project3.jpg" alt="Weather App">
+      </div>
+      <h5>Weather App </h5>
+      <p>
+        Built a weather app that provides a detailed forecast, allowing users to view current weather conditions and upcoming trends. The app lets users search locations, track temperatures, and monitor precipitation.
+      </p>
+      <div class="project__cta">
+        <a href="https://github.com/AleksandarGvozdenovic/Weather-App" class="btn" target="_blank"><i class="uil uil-github-alt"></i></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!--===============================>CONTACT<============================--> 
+<section id="contact">
+  <div class="container contact__container">
+     <menu class="contact__options">
+       <a href="mailto:aleksandargvozdenovic78@gmail.com" class="contact__option" target="_blank">
+        <i class="uil uil-envelope"></i>
+       </a>
+       <a href="https://wa.me/+38268359067" class="contact__option" target="_blank">
+        <i class="uil uil-whatsapp"></i>
+       </a>
+       <a href="tel:+38268359067" class="contact__option" target="_blank">
+        <i class="uil uil-phone"></i>
+       </a>
+     </menu>
+     <form action="https://formsubmit.co/aleksandargvozdenovic78@gmail.com" method="POST" data-aos="fade-up" data-aos-delay="200">
+      <input type="text" name="Name" placeholder="Full Name">
+      <input type="email" name="Email" placeholder="Email Address">
+      <textarea rows="7" name="Message" placeholder="Message"></textarea>
+      <button type="submit" class="btn primary">Send</button>
+     </form>
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({duration:2000, offset:80});
+</script>
+<script src="./script.js"></script>
+</body>
+</html>
