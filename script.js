@@ -68,7 +68,7 @@ resumeRight.innerHTML = experienceContent ;
           <h4>Education</h4>  
           <ul>
             <li>
-              <h5>Bachelor's Degree in Computer Science</h5>
+              <h5>Bachelor's Degree in Computer Science and Informatics</h5>
               <p>Faculty of Technical Sciences</p>
               <p>(2017 - 2021)</p>
             </li>
@@ -80,7 +80,7 @@ resumeRight.innerHTML = experienceContent ;
             <li>
               <h5>Udemy Course: Node.js, Express, MongoDB & More</h5>
               <p>Focusing on back-end development with Node.js, database management, and RESTful API design.</p>
-              <p>(2025 - present)</p>
+              <p>(present)</p>
             </li>
           </ul>`;
  
