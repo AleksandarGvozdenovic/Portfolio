@@ -78,9 +78,8 @@ resumeRight.innerHTML = experienceContent ;
               <p>(2024)</p>
             </li>
             <li>
-              <h5>Udemy Course: Node.js, Express, MongoDB</h5>
-              <p>Focusing on back-end development with Node.js, database management, and RESTful API design.</p>
-              <p>(present)</p>
+              <h5>JavaScript Algorithms and Data Structures</h5>
+              <p>Focusing on JavaScript, algorithms, data structures, and problem-solving techniques.</p>
             </li>
           </ul>`;
  
