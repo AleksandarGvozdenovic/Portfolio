@@ -27,24 +27,31 @@ const experienceContent = `
             I have worked on personal and freelance projects to build practical skills in web development. Here are a few highlights:
           </p>
           <ul>
-            <li>
-              <h6>2024</h6>
-              <h5>GG Almont Website</h5>
-              <p>
-                Designed and developed a responsive website using HTML, CSS, and JavaScript. 
-                Focused on creating an intuitive user interface and ensuring accessibility across different devices.
-              </p>
-            </li>
-            <li>
-              <h6>2025</h6>
-              <h5>Weather App</h5>
-              <p>Built a weather application that fetches live data using a public API and features a user-friendly interface.</p>
-            </li>
-            <li>
-              <h6>2025</h6>
-              <h5>Time Tracker</h5>
-              <p>Developed a time-tracking tool to manage tasks and improve productivity using JavaScript and local storage.</p>
-            </li>
+           <li>
+             <h6>2025</h6>
+             <h5>Project Management App (React – Udemy Course Project)</h5>
+             <p>
+               Built an interactive application for managing projects and tasks, focusing on effective state management, dynamic UI updates, and responsive design principles learned through a React-focused course.
+             </p>
+           </li>
+
+           <li>
+            <h6>2025</h6>
+            <h5>Tic Tac Toe (React – Udemy Course Project)</h5>
+            <p>
+              Developed an interactive Tic Tac Toe game during a React-focused course. Features dynamic rendering, intuitive interactions, and responsive design, demonstrating fundamental React skills.
+            </p>
+           </li>
+
+           <li>
+             <h6>2024</h6>
+             <h5>GG Almont Website</h5>
+             <p>
+              Designed and developed a responsive website using HTML, CSS, and JavaScript. 
+              Focused on creating an intuitive user interface and ensuring accessibility across different devices.
+             </p>
+           </li>
+
           </ul>`
 
 
@@ -68,9 +75,12 @@ resumeRight.innerHTML = experienceContent ;
           <h4>Education</h4>  
           <ul>
             <li>
-              <h5>Bachelor's Degree in Computer Science and Informatics</h5>
-              <p>Faculty of Technical Sciences</p>
-              <p>(2017 - 2021)</p>
+              <h5>Udemy Course: React – The Complete Guide</h5>
+              <p>Focusing on React fundamentals, component-based architecture, state management, hooks, routing, and building responsive user interfaces.</p>
+            </li>
+            <li>
+              <h5>JavaScript Algorithms and Data Structures</h5>
+              <p>Focusing on JavaScript, algorithms, data structures, and problem-solving techniques.</p>
             </li>
             <li>
               <h5>Udemy Course: The Complete JavaScript Course </h5>
@@ -78,8 +88,9 @@ resumeRight.innerHTML = experienceContent ;
               <p>(2024)</p>
             </li>
             <li>
-              <h5>JavaScript Algorithms and Data Structures</h5>
-              <p>Focusing on JavaScript, algorithms, data structures, and problem-solving techniques.</p>
+              <h5>Bachelor's Degree in Computer Science and Informatics</h5>
+              <p>Faculty of Technical Sciences</p>
+              <p>(2017 - 2021)</p>
             </li>
           </ul>`;
  
@@ -102,11 +113,13 @@ resumeRight.innerHTML = experienceContent ;
             Below are the technologies and tools I am familiar with:
           </p>
           <ul>
-            <li><h6>HTML5</h6></li>
-            <li><h6>CSS3</h6></li>
-            <li><h6>SQL</h6></li>
-            <li><h6>GitHub</h6></li>
-            <li><h6>JS</h6></li>
+           <li><h6>HTML5</h6></li>
+           <li><h6>CSS3</h6></li>
+           <li><h6>Tailwind CSS</h6></li>
+           <li><h6>JavaScript (ES6+)</h6></li>
+           <li><h6>React</h6></li>
+           <li><h6>SQL</h6></li>
+           <li><h6>GitHub</h6></li>
           </ul>`;
  
  skillsBtn.addEventListener('click',()=>{
@@ -125,10 +138,10 @@ resumeRight.innerHTML = experienceContent ;
  const aboutContent=`
           <h4>About me</h4>  
           <p>
-            I am a motivated and detail-oriented aspiring software developer with a passion for solving problems and creating impactful digital solutions. 
-            My educational background has given me a solid foundation in object-oriented programming, SQL, and software engineering principles,
-            while my personal projects have allowed me to gain hands-on experience with JavaScript and web development.
-            I am eager to learn, grow, and contribute to innovative projects as part of a collaborative team.
+             I am a motivated and detail-oriented aspiring frontend developer with a Bachelor's degree in Computer Science and Informatics.
+             My educational background provided me with a solid understanding of software development principles, algorithms, and data structures.
+             Through personal and course projects, I've gained hands-on experience with JavaScript, React, and responsive web design.
+             Passionate about continuous learning, I am eager to contribute to innovative projects within a collaborative and growth-oriented team environment.
           </p>
          `;
  
