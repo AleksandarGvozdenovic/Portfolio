@@ -138,10 +138,11 @@ resumeRight.innerHTML = experienceContent ;
  const aboutContent=`
           <h4>About me</h4>  
           <p>
-             I am a motivated and detail-oriented aspiring frontend developer with a Bachelor's degree in Computer Science and Informatics.
-             My educational background provided me with a solid understanding of software development principles, algorithms, and data structures.
-             Through personal and course projects, I've gained hands-on experience with JavaScript, React, and responsive web design.
-             Passionate about continuous learning, I am eager to contribute to innovative projects within a collaborative and growth-oriented team environment.
+             I am a motivated and detail-oriented aspiring software developer with a Bachelor's degree in Computer Science and Informatics. 
+             My educational background provided me with a solid understanding of software development principles, algorithms, and data structures. 
+             Through personal and course projects, I have gained hands-on experience with JavaScript, React, and responsive web design. 
+             I am passionate about continuous learning and expanding my skills in both frontend and backend development.
+             Eager to contribute to innovative projects, I thrive in collaborative, growth-oriented team environments.
           </p>
          `;
  
