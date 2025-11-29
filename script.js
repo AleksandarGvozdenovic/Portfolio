@@ -16,17 +16,32 @@ floatingNavs.forEach((nav) => {
 });
 
 // ====================================================================
-// FLOATING NAV – SHOW ONLY AFTER SCROLL
+// FLOATING NAV – SHOW ONLY AFTER SCROLL & HIDE ON CONTACT
 // ====================================================================
 
 const floatingNav = document.querySelector(".floating__nav");
+const contactSection = document.getElementById("contact");
 
 const handleFloatingNavVisibility = () => {
-  const showAt = 80; 
+  const showAt = 80; // when to start showing floating nav
 
   if (!floatingNav) return;
 
-  if (window.scrollY > showAt) {
+  const scrollY = window.scrollY;
+  const viewportHeight = window.innerHeight;
+
+  let hideAtBottom = false;
+
+  // hide when reaching (or almost reaching) the contact section
+  if (contactSection) {
+    const contactTop = contactSection.offsetTop;
+
+    if (scrollY + viewportHeight >= contactTop + 500) {
+      hideAtBottom = true;
+    }
+  }
+
+  if (scrollY > showAt && !hideAtBottom) {
     floatingNav.classList.add("floating__nav--visible");
   } else {
     floatingNav.classList.remove("floating__nav--visible");
@@ -44,7 +59,7 @@ handleFloatingNavVisibility();
 const resumeRight = document.querySelector(".resume__right");
 
 // --------------------------------------------------------------------
-// EXPERIENCE 
+// EXPERIENCE
 // --------------------------------------------------------------------
 
 const experienceContent = `
@@ -104,7 +119,7 @@ experienceBtn.addEventListener("click", () => {
 resumeRight.innerHTML = experienceContent;
 
 // --------------------------------------------------------------------
-// EDUCATION – formal education & bootcamp
+// EDUCATION
 // --------------------------------------------------------------------
 
 const educationBtn = document.querySelector(".education__btn");
@@ -166,7 +181,7 @@ skillsBtn.addEventListener("click", () => {
 });
 
 // --------------------------------------------------------------------
-// ABOUT – single paragraph summary
+// ABOUT 
 // --------------------------------------------------------------------
 
 const aboutBtn = document.querySelector(".about__btn");
