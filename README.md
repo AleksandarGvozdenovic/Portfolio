@@ -7,7 +7,7 @@ This site is built as a clean, single-page portfolio with a focus on simple UX, 
 ---
 
 ## 🔗 Live Demo
-**Live site:** [aleksandargvozdenovic.com](https://www.aleksandargvozdenovic.com)
+**Live site:** https://www.aleksandargvozdenovic.com
 
 ---
 
