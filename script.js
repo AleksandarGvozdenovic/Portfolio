@@ -1,183 +1,236 @@
-//=================FLOATING NAV==================
+// ====================================================================
+// FLOATING NAV – ACTIVE LINK HANDLING
+// ====================================================================
 
-const floatingNavs=document.querySelectorAll('.floating__nav a');
+const floatingNavs = document.querySelectorAll(".floating__nav a");
 
-const removeActiveClass=()=>{
-  floatingNavs.forEach(nav => {
-    nav.classList.remove('active')
-  })
-}
+const removeActiveClass = () => {
+  floatingNavs.forEach((nav) => nav.classList.remove("active"));
+};
 
-floatingNavs.forEach(nav =>{
-  nav.addEventListener('click',() =>{
+floatingNavs.forEach((nav) => {
+  nav.addEventListener("click", () => {
     removeActiveClass();
-    nav.classList.add('active')
-  })
-})
-
-
-//=================RESUME==================
-
-const resumeRight = document.querySelector('.resume__right');
-
-//EXPERIENCE
-const experienceContent = `
-          <h4>Experience</h4>  
-          <p>
-            I have worked on personal and freelance projects to build practical skills in web development. Here are a few highlights:
-          </p>
-          <ul>
-            <li>
-              <h6>2024</h6>
-              <h5>GG Almont Website</h5>
-              <p>
-                Designed and developed a responsive website using HTML, CSS, and JavaScript. 
-                Focused on creating an intuitive user interface and ensuring accessibility across different devices.
-              </p>
-            </li>
-            <li>
-              <h6>2025</h6>
-              <h5>Weather App</h5>
-              <p>Built a weather application that fetches live data using a public API and features a user-friendly interface.</p>
-            </li>
-            <li>
-              <h6>2025</h6>
-              <h5>Time Tracker</h5>
-              <p>Developed a time-tracking tool to manage tasks and improve productivity using JavaScript and local storage.</p>
-            </li>
-          </ul>`
-
-
-const experienceBtn= document.querySelector('.experience__btn');
-experienceBtn.addEventListener('click',()=>{
-  resumeRight.innerHTML = experienceContent; 
-  resumeRight.className="resume__right";
-  experienceBtn.classList.add('primary');
-  aboutBtn.classList.remove('primary');   
-  skillsBtn.classList.remove('primary'); 
-  educationBtn.classList.remove('primary'); 
-});
-resumeRight.innerHTML = experienceContent ;    
-
-
-
- //EDUCATION
-
- const educationBtn=document.querySelector('.education__btn');
- const educationContent=`
-          <h4>Education</h4>  
-          <ul>
-            <li>
-              <h5>Bachelor's Degree in Computer Science</h5>
-              <p>Faculty of Technical Sciences</p>
-              <p>(2017 - 2021)</p>
-            </li>
-            <li>
-              <h5>Udemy Course: The Complete JavaScript Course </h5>
-              <p>Covered advanced JavaScript concepts, including ES6+, asynchronous programming, and DOM manipulation.</p>
-              <p>(2024)</p>
-            </li>
-            <li>
-              <h5>Udemy Course: Node.js, Express, MongoDB & More</h5>
-              <p>Focusing on back-end development with Node.js, database management, and RESTful API design.</p>
-              <p>(2025 - present)</p>
-            </li>
-          </ul>`;
- 
- educationBtn.addEventListener('click',()=>{
-   resumeRight.innerHTML = educationContent;
-   resumeRight.className = 'resume__right education';
-   educationBtn.classList.add('primary');
-   aboutBtn.classList.remove('primary');   
-   skillsBtn.classList.remove('primary'); 
-   experienceBtn.classList.remove('primary'); 
- });
-
-
-  //Skills
-
- const skillsBtn=document.querySelector('.skills__btn');
- const skillsContent=`
-          <h4>Skills</h4>  
-          <p>
-            Below are the technologies and tools I am familiar with:
-          </p>
-          <ul>
-            <li><h6>HTML5</h6></li>
-            <li><h6>CSS3</h6></li>
-            <li><h6>SQL</h6></li>
-            <li><h6>GitHub</h6></li>
-            <li><h6>JS</h6></li>
-          </ul>`;
- 
- skillsBtn.addEventListener('click',()=>{
-   resumeRight.innerHTML = skillsContent;
-   resumeRight.className= 'resume__right skills';
-   skillsBtn.classList.add('primary');
-   aboutBtn.classList.remove('primary');   
-   educationBtn.classList.remove('primary'); 
-   experienceBtn.classList.remove('primary'); 
- });
-
-
-   //ABOUT ME
-
- const aboutBtn=document.querySelector('.about__btn');
- const aboutContent=`
-          <h4>About me</h4>  
-          <p>
-            I am a motivated and detail-oriented aspiring software developer with a passion for solving problems and creating impactful digital solutions. 
-            My educational background has given me a solid foundation in object-oriented programming, SQL, and software engineering principles,
-            while my personal projects have allowed me to gain hands-on experience with JavaScript and web development.
-            I am eager to learn, grow, and contribute to innovative projects as part of a collaborative team.
-          </p>
-         `;
- 
- aboutBtn.addEventListener('click',()=>{
-   resumeRight.innerHTML = aboutContent;
-   resumeRight.className= 'resume__right about';
-   aboutBtn.classList.add('primary');
-   skillsBtn.classList.remove('primary');   
-   educationBtn.classList.remove('primary'); 
-   experienceBtn.classList.remove('primary'); 
- });
-
-
- //=================MIX(projects section)==================
-const buttons = document.querySelectorAll('.projects__categories .btn');
-const projects = document.querySelectorAll('.project');
-
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    const filter = button.getAttribute('data-filter');
-
-    projects.forEach(project => {
-      if (filter === '*' || project.classList.contains(filter.substring(1))) {
-        project.style.display = 'block'; 
-      } else {
-        project.style.display = 'none'; 
-      }
-    });
-
-    
-    buttons.forEach(btn => btn.classList.remove('primary'));
-    button.classList.add('primary');
+    nav.classList.add("active");
   });
 });
 
-//==================================THEME==================
-const themeToggler = document.querySelector('.nav__theme-btn');
-themeToggler.addEventListener('click',() => {
-  document.body.classList.toggle('dark-theme-variables')
-  if(document.body.classList == ''){
-    themeToggler.innerHTML=`<i class="uil uil-moon"></i>`
-    window.localStorage.setItem('portfolio-theme', '');
-  } else{
-    themeToggler.innerHTML=`<i class="uil uil-sun"></i>`
-    window.localStorage.setItem('portfolio-theme', 'dark-theme-variables'); 
+// ====================================================================
+// FLOATING NAV – SHOW ONLY AFTER SCROLL
+// ====================================================================
+
+const floatingNav = document.querySelector(".floating__nav");
+
+const handleFloatingNavVisibility = () => {
+  const showAt = 80; 
+
+  if (!floatingNav) return;
+
+  if (window.scrollY > showAt) {
+    floatingNav.classList.add("floating__nav--visible");
+  } else {
+    floatingNav.classList.remove("floating__nav--visible");
+  }
+};
+
+window.addEventListener("scroll", handleFloatingNavVisibility);
+// run once on load
+handleFloatingNavVisibility();
+
+// ====================================================================
+// RESUME TABS (EXPERIENCE / EDUCATION / SKILLS / ABOUT)
+// ====================================================================
+
+const resumeRight = document.querySelector(".resume__right");
+
+// --------------------------------------------------------------------
+// EXPERIENCE 
+// --------------------------------------------------------------------
+
+const experienceContent = `
+  <h4>Experience</h4>
+  <p>
+    Most of my hands-on experience comes from project work where I practised
+    building real web applications and interfaces.
+  </p>
+  <ul>
+    <li>
+      <h6>Web App</h6>
+      <h5>WanderLog – Travel Planner (MERN)</h5>
+      <p>
+        Travel planning app where users create trips, add activities (flights, stays, tours)
+        and see a simple overview of budget and expenses.
+      </p>
+    </li>
+    <li>
+      <h6>Web App</h6>
+      <h5>Movie Zone – Cinema Ticketing (MEN Stack)</h5>
+      <p>
+        Cinema ticketing web app with user roles, movie catalogue, search and filters,
+        and a basic checkout flow.
+      </p>
+    </li>
+    <li>
+      <h6>Game</h6>
+      <h5>Snake Game – JavaScript</h5>
+      <p>
+        Classic Snake game built in vanilla JavaScript to practise DOM manipulation,
+        keyboard controls and game logic.
+      </p>
+    </li>
+    <li>
+      <h6>Website</h6>
+      <h5>GG Almont – Company Website</h5>
+      <p>
+        Responsive single-page website for a PVC & ALU windows and doors company,
+        focused on clear structure and simple user experience.
+      </p>
+    </li>
+  </ul>
+`;
+
+const experienceBtn = document.querySelector(".experience__btn");
+
+experienceBtn.addEventListener("click", () => {
+  resumeRight.innerHTML = experienceContent;
+  resumeRight.className = "resume__right";
+  experienceBtn.classList.add("primary");
+  aboutBtn.classList.remove("primary");
+  skillsBtn.classList.remove("primary");
+  educationBtn.classList.remove("primary");
+});
+
+// set initial tab content to Experience
+resumeRight.innerHTML = experienceContent;
+
+// --------------------------------------------------------------------
+// EDUCATION – formal education & bootcamp
+// --------------------------------------------------------------------
+
+const educationBtn = document.querySelector(".education__btn");
+const educationContent = `
+  <h4>Education</h4>
+  <ul>
+    <li>
+      <h5>Bachelor's Degree in Computer Science and Informatics</h5>
+      <p>Faculty of Technical Sciences</p>
+      <p>2017 – 2021</p>
+    </li>
+    <li>
+      <h5>Software Engineering Bootcamp</h5>
+      <p>General Assembly</p>
+      <p>Software Engineering Bootcamp (2025)</p>
+    </li>
+  </ul>
+`;
+
+educationBtn.addEventListener("click", () => {
+  resumeRight.innerHTML = educationContent;
+  resumeRight.className = "resume__right education";
+  educationBtn.classList.add("primary");
+  aboutBtn.classList.remove("primary");
+  skillsBtn.classList.remove("primary");
+  experienceBtn.classList.remove("primary");
+});
+
+// --------------------------------------------------------------------
+// SKILLS – tech stack overview
+// --------------------------------------------------------------------
+
+const skillsBtn = document.querySelector(".skills__btn");
+const skillsContent = `
+  <h4>Skills</h4>
+  <p>Technologies and tools I work with:</p>
+  <ul>
+    <li><h6>HTML5</h6></li>
+    <li><h6>CSS3</h6></li>
+    <li><h6>JavaScript (ES6+)</h6></li>
+    <li><h6>React</h6></li>
+    <li><h6>Tailwind CSS</h6></li>
+    <li><h6>Node.js</h6></li>
+    <li><h6>Express</h6></li>
+    <li><h6>MongoDB</h6></li>
+    <li><h6>MySQL</h6></li>
+    <li><h6>Git</h6></li>
+    <li><h6>GitHub</h6></li>
+  </ul>
+`;
+
+skillsBtn.addEventListener("click", () => {
+  resumeRight.innerHTML = skillsContent;
+  resumeRight.className = "resume__right skills";
+  skillsBtn.classList.add("primary");
+  aboutBtn.classList.remove("primary");
+  educationBtn.classList.remove("primary");
+  experienceBtn.classList.remove("primary");
+});
+
+// --------------------------------------------------------------------
+// ABOUT – single paragraph summary
+// --------------------------------------------------------------------
+
+const aboutBtn = document.querySelector(".about__btn");
+const aboutContent = `
+  <h4>About me</h4>
+  <p>
+    Junior Frontend Developer based in Podgorica, Montenegro, with a background in Computer Science and Informatics. I am at the beginning of my software development career and learn best by building real projects. By attending a full-time Software Engineering Bootcamp at General Assembly and working on several personal and team projects, I’ve gained hands-on experience with modern web technologies. I enjoy writing clean, understandable code, collaborating with others and contributing to real-world products, and I’m currently looking for an entry-level frontend role where I can learn, contribute and be part of a team.
+  </p>
+`;
+
+aboutBtn.addEventListener("click", () => {
+  resumeRight.innerHTML = aboutContent;
+  resumeRight.className = "resume__right about";
+  aboutBtn.classList.add("primary");
+  skillsBtn.classList.remove("primary");
+  educationBtn.classList.remove("primary");
+  experienceBtn.classList.remove("primary");
+});
+
+// ====================================================================
+// PROJECTS FILTER (ALL / FRONTEND / BACKEND)
+// ====================================================================
+
+const buttons = document.querySelectorAll(".projects__categories .btn");
+const projects = document.querySelectorAll(".project");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.getAttribute("data-filter");
+
+    projects.forEach((project) => {
+      if (filter === "*" || project.classList.contains(filter.substring(1))) {
+        project.style.display = "block";
+      } else {
+        project.style.display = "none";
+      }
+    });
+
+    buttons.forEach((btn) => btn.classList.remove("primary"));
+    button.classList.add("primary");
+  });
+});
+
+// ====================================================================
+// THEME TOGGLER (LIGHT / DARK)
+// ====================================================================
+
+const themeToggler = document.querySelector(".nav__theme-btn");
+
+themeToggler.addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme-variables");
+
+  if (document.body.classList.contains("dark-theme-variables")) {
+    themeToggler.innerHTML = `<i class="uil uil-sun"></i>`;
+    window.localStorage.setItem("portfolio-theme", "dark-theme-variables");
+  } else {
+    themeToggler.innerHTML = `<i class="uil uil-moon"></i>`;
+    window.localStorage.setItem("portfolio-theme", "");
   }
 });
 
-//use theme from local storage on page load
-const bodyClass = window.localStorage.getItem('portfolio-theme');
-document.body.className = bodyClass;
+// Load saved theme on page load
+const bodyClass = window.localStorage.getItem("portfolio-theme");
+if (bodyClass) {
+  document.body.classList.add(bodyClass);
+  themeToggler.innerHTML = `<i class="uil uil-sun"></i>`;
+}
