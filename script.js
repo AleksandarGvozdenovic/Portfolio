@@ -188,7 +188,7 @@ const aboutBtn = document.querySelector(".about__btn");
 const aboutContent = `
   <h4>About me</h4>
   <p>
-    Junior Frontend Developer based in Podgorica, Montenegro, with a background in Computer Science and Informatics. I am at the beginning of my software development career and learn best by building real projects. By attending a full-time Software Engineering Bootcamp at General Assembly and working on several personal and team projects, I’ve gained hands-on experience with modern web technologies. I enjoy writing clean, understandable code, collaborating with others and contributing to real-world products, and I’m currently looking for an entry-level frontend role where I can learn, contribute and be part of a team.
+    Junior Software Developer based in Belgrade, Serbia, with a background in Computer Science and Informatics. I am at the beginning of my software development career and learn best by building real projects. By attending a full-time Software Engineering Bootcamp at General Assembly and working on several personal and team projects, I’ve gained hands-on experience with modern web technologies. I enjoy writing clean, understandable code, collaborating with others and contributing to real-world products, and I’m currently looking for an entry-level frontend role where I can learn, contribute and be part of a team.
   </p>
 `;
 
