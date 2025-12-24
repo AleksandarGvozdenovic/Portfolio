@@ -1,6 +1,6 @@
 # Aleksandar Gvozdenović – Portfolio
 
-Personal portfolio website showcasing my projects, skills and background as a Junior Frontend Developer.
+Personal portfolio website showcasing my projects, skills and background as a Software Developer.
 
 This site is built as a clean, single-page portfolio with a focus on simple UX, responsive layout and easily maintainable code.
 
